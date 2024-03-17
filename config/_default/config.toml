@@ -1,4 +1,41 @@
-baseURL = "https://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://kei-gnu.github.io/"
+languageCode = "ja-jp"
+title = "kei's blog"
 theme = "ananke"
+hasCJKLanguage = true
+preserveTaxonomyNames = true
+paginate = 10
+disqusShortname = "https-hakomori64-github-io"
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+author = "authors"
+
+[menu]
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+
+[params]
+mainSections = [ "posts", "categories", "tags" ]
+
+[related]
+  includeNewer = false
+  threshold = 80
+  toLower = false
+
+  [[related.indices]]
+    name = "keywords"
+    weight = 100
+
+  [[related.indices]]
+    name = "date"
+    weight = 10
