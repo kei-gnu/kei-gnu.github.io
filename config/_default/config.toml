@@ -1,7 +1,7 @@
 baseURL = "https://kei-gnu.github.io/"
 languageCode = "ja-jp"
 title = "kei's blog"
-theme = "ananke"
+theme = "hugo-bearblog"
 hasCJKLanguage = true
 preserveTaxonomyNames = true
 paginate = 10
