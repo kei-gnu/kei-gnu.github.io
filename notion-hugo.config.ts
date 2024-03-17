@@ -3,7 +3,7 @@ import { UserConfig } from "./src/config"
 const userConfig: UserConfig = {
     mount: {
         manual: false,
-        page_url: 'https://quilted-jury-039.notion.site/8e003051456e443c9a52e04c5ba66ddd?v=9473e58ea92b4df8aac9fe8b3e0f2972&pvs=4',
+        page_url: 'https://quilted-jury-039.notion.site/Blog-post-b569a671df2a42028f869b489f999139?pvs=4',
         pages: [
             // {
             //     page_id: '<page_id>',
