@@ -44,6 +44,7 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          token: ${{ secrets.PAT }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
