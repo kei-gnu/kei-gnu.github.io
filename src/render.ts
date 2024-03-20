@@ -250,7 +250,8 @@ export async function savePage(
   console.info(`[Info] Updating ${postpath}`);
 
   const { title, pageString } = await renderPage(page, notion);
-  const fileName = getFileName(title, page.id);
+  const created_time = page.created_time.split('T')[0];
+  const fileName = getFileName(created_time, page.id);
   await sh(
     `hugo new "${mount.target_folder}/${fileName}"`,
     false
