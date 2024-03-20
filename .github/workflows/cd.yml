@@ -69,10 +69,6 @@ jobs:
           npm start
           hugo
 
-      - name: Git pull
-        run:
-          git pull origin main
-
       - name: Commit updated content
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
