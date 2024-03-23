@@ -31,7 +31,7 @@ export async function getCoverLink(
 }
 
 export function getFileName(title:string, created_time: string, page_id: string): string {
-  if (title == "About me") return "about_me.md";
+  if (title == "About me") return "about.md";
   else if (title == "Home") return "_index.md";
 
   // return title.replaceAll(" ", "-").replace(/--+/g, "-") +
