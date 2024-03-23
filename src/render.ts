@@ -235,10 +235,12 @@ export async function savePage(
   notion: Client,
   mount: DatabaseMount | PageMount
 ) {
+  const { title, pageString } = await renderPage(page, notion);
+  const created_time = page.created_time.split('T')[0];
   const postpath = path.join(
     "content",
     mount.target_folder,
-    getFileName(getPageTitle(page), page.id)
+    getFileName(title, getPageTitle(page), page.id)
   );
   const post = getContentFile(postpath);
   if (post) {
@@ -252,9 +254,7 @@ export async function savePage(
   // otherwise update the page
   console.info(`[Info] Updating ${postpath}`);
 
-  const { title, pageString } = await renderPage(page, notion);
-  const created_time = page.created_time.split('T')[0];
-  const fileName = getFileName(created_time, page.id);
+  const fileName = getFileName(title, created_time, page.id);
   await sh(
     `hugo new "${mount.target_folder}/${fileName}"`,
     false
