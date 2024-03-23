@@ -90,7 +90,7 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
     title,
     date: page.created_time,
     lastmod: page.last_edited_time,
-    draft: false,
+    submit: true,
   };
 
   // set featuredImage
