@@ -90,7 +90,7 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
     title,
     date: page.created_time,
     lastmod: page.last_edited_time,
-    submit: true,
+    draft: false,
   };
 
   // set featuredImage
@@ -202,6 +202,10 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
       frontMatter.authors = [response.name];
     }
   }
+  // if submit properties is false, draft is false
+  if (frontMatter.submit === false) {
+    frontMatter.draft = true;
+  }
 
   // save metadata
   frontMatter.NOTION_METADATA = page;
@@ -210,7 +214,6 @@ export async function renderPage(page: PageObjectResponse, notion: Client) {
   frontMatter.UPDATE_TIME = (new Date()).toISOString()
   // save nearest expiry time
   if (nearest_expiry_time) frontMatter.EXPIRY_TIME = nearest_expiry_time
- 
 
 
   return {
